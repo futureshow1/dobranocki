@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LEGENDARNE DOBRANOCKI — portal dobranocek 1980–2000</title>
+<meta name="description" content="Legendarne dobranocki polskiej telewizji lat 1980–2000 — zestawy odcinków z YouTube do oglądania ciągiem lub pojedynczo: Bolek i Lolek, Reksio, Miś Uszatek, Krecik, Wilk i Zając, Smerfy, Muminki.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LEGENDARNE DOBRANOCKI — 322 odcinki, 53 bajki, 1980–2000">
+<meta property="og:description" content="Kreskówki, które kładły Polskę spać: od Bolka i Lolka, Reksia i Misia Uszatka, przez Krecika i Wilka z Zającem, po Smerfy i Muminki. Zestawy odcinków z YouTube — oglądaj ciągiem albo pojedynczo.">
+<meta property="og:image" content="https://futureshow1.github.io/futureshow/projects/dobranocki/og-image.png">
+<meta property="og:url" content="https://futureshow1.github.io/futureshow/projects/dobranocki/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0d17;
+    --bg-card: #121527;
+    --bg-card-hover: #191d33;
+    --bg-panel: rgba(11,13,23,.94);
+    --ink: #eef0f8;
+    --ink-dim: #a9adc4;
+    --ink-faint: #626880;
+    --acc: #b9a5ff;
+    --acc-deep: #8f74f0;
+    --moon: #ffd98a;
+    --line: #23273d;
+    --shadow: rgba(0,0,5,.55);
+    --r: 14px;
+    --display: 'Archivo Black', 'Arial Black', sans-serif;
+    --body: 'Space Grotesk', 'Helvetica Neue', sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+  html.light {
+    --bg: #eeeaf8;
+    --bg-card: #faf8ff;
+    --bg-card-hover: #ffffff;
+    --bg-panel: rgba(238,234,248,.95);
+    --ink: #16142a;
+    --ink-dim: #4c4868;
+    --ink-faint: #8a86a3;
+    --acc: #6a4fd8;
+    --acc-deep: #5138b0;
+    --moon: #e8a71c;
+    --line: #d7d1e8;
+    --shadow: rgba(50,40,90,.22);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; background: var(--bg); transition: background .3s; }
+  body {
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--body);
+    line-height: 1.5;
+    overflow-x: hidden;
+    transition: color .3s;
+  }
+  ::selection { background: var(--acc); color: #14122a; }
+
+  /* ============ NOCNE NIEBO (animowane tło) ============ */
+  .sky {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--ink-dim);
+    opacity: .15;
+    animation: twinkle 3s ease-in-out infinite;
+  }
+  .star.violet { background: var(--acc); }
+  .star.drift { animation-name: twinkle, drift; animation-timing-function: ease-in-out, linear; }
+  @keyframes twinkle { 0%,100% { opacity: .1; } 50% { opacity: .85; } }
+  @keyframes drift { from { transform: translate(0,0); } to { transform: translate(-70px, 45px); } }
+  .shooting {
+    position: absolute;
+    width: 120px; height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #fff, var(--acc), transparent);
+    opacity: 0;
+    animation: shoot 14s linear infinite;
+  }
+  @keyframes shoot {
+    0%   { opacity: 0; transform: translate(0,0) rotate(24deg); }
+    1.5% { opacity: .9; }
+    6%   { opacity: 0; transform: translate(-380px, 170px) rotate(24deg); }
+    100% { opacity: 0; }
+  }
+  /* dzień: gwiazdy gasną, po niebie suną obłoki */
+  html.light .star, html.light .shooting { display: none; }
+  .cloud {
+    position: absolute;
+    display: none;
+    height: 22px;
+    border-radius: 999px;
+    background: #ffffff;
+    opacity: .6;
+    filter: blur(1px);
+    box-shadow: 22px -12px 0 4px #ffffff, 48px -5px 0 6px #ffffff, -18px -7px 0 2px #ffffff;
+    animation: cloudDrift linear infinite;
+  }
+  html.light .cloud { display: block; }
+  @keyframes cloudDrift {
+    from { transform: translateX(-220px); }
+    to   { transform: translateX(115vw); }
+  }
+
+  /* ============ HEADER ============ */
+  header {
+    position: relative;
+    padding: 5rem 4vw 3.5rem;
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+  /* księżyc: kołysze się i co jakiś czas mryga poświatą */
+  .moon {
+    position: absolute;
+    top: 3.2rem; right: 9vw;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    box-shadow: inset -26px 10px 0 2px var(--moon);
+    opacity: .92;
+    pointer-events: none;
+    animation: moonFloat 12s ease-in-out infinite;
+  }
+  .moon::after {
+    content: "";
+    position: absolute;
+    inset: -18px;
+    border-radius: 50%;
+    animation: moonGlow 7s ease-in-out infinite;
+  }
+  @keyframes moonFloat {
+    0%,100% { transform: rotate(12deg) translateY(0); }
+    50%     { transform: rotate(5deg) translateY(-16px); }
+  }
+  @keyframes moonGlow {
+    0%, 84%, 100% { box-shadow: 0 0 0 0 rgba(255,217,138,0); }
+    90%           { box-shadow: 0 0 46px 10px rgba(255,217,138,.28); }
+  }
+  /* dzień: księżyc staje się słońcem z koroną promieni */
+  .moon { transition: box-shadow .5s, background .5s; }
+  html.light .moon {
+    box-shadow: inset 0 0 0 60px var(--moon);
+    background: var(--moon);
+  }
+  .moon::before {
+    content: "";
+    position: absolute;
+    inset: -26px;
+    border-radius: 50%;
+    background: repeating-conic-gradient(from 0deg, var(--moon) 0deg 5deg, transparent 5deg 30deg);
+    -webkit-mask: radial-gradient(circle, transparent 56%, #000 59%, #000 71%, transparent 74%);
+    mask: radial-gradient(circle, transparent 56%, #000 59%, #000 71%, transparent 74%);
+    opacity: 0;
+    transition: opacity .5s;
+    animation: sunSpin 50s linear infinite;
+  }
+  html.light .moon::before { opacity: .9; }
+  @keyframes sunSpin { to { transform: rotate(360deg); } }
+  html.light .moon::after { animation: sunGlow 5.5s ease-in-out infinite; }
+  @keyframes sunGlow {
+    0%,100% { box-shadow: 0 0 26px 6px rgba(232,167,28,.16); }
+    50%     { box-shadow: 0 0 58px 16px rgba(232,167,28,.32); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sky *, .moon, .moon::before, .moon::after { animation: none !important; }
+  }
+  .kicker {
+    font-family: var(--mono);
+    font-size: .72rem;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: var(--acc);
+    margin-bottom: 1.2rem;
+    position: relative;
+  }
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(2.2rem, 7.4vw, 5.6rem);
+    line-height: .92;
+    text-transform: uppercase;
+    letter-spacing: -.01em;
+    position: relative;
+  }
+  h1 span { display: block; white-space: nowrap; }
+  h1 #titleTop { min-height: 1em; }
+  /* usypiające przejście tytułu: litery rozpływają się i wyłaniają */
+  h1 .tl {
+    display: inline-block;
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+    transition: opacity 1.1s ease, filter 1.1s ease, transform 1.1s ease;
+  }
+  h1 .tl.out {
+    opacity: 0;
+    filter: blur(7px);
+    transform: translateY(.08em);
+  }
+  h1 .stroke {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--ink);
+  }
+  .lede {
+    max-width: 640px;
+    margin-top: 1.6rem;
+    color: var(--ink-dim);
+    font-weight: 300;
+    font-size: 1.02rem;
+    position: relative;
+  }
+  .lede .src { font-size: .8rem; color: var(--ink-faint); display: block; margin-top: .6rem; }
+  .stats {
+    display: flex;
+    gap: 2.8rem;
+    margin-top: 2.4rem;
+    font-family: var(--mono);
+    position: relative;
+  }
+  .stat b {
+    display: block;
+    font-size: 1.7rem;
+    color: var(--acc);
+    font-weight: 500;
+  }
+  .stat span {
+    font-size: .68rem;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* ============ TOOLBAR ============ */
+  .toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+    align-items: center;
+    padding: .9rem 4vw;
+    background: var(--bg-panel);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-dd { position: relative; }
+  .nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .6em;
+    max-width: 340px;
+    font-family: var(--mono);
+    font-size: .72rem;
+    letter-spacing: .06em;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink);
+    padding: .58rem 1rem;
+    cursor: pointer;
+    transition: border-color .2s;
+    white-space: nowrap;
+  }
+  .nav-btn:hover, .nav-dd.open .nav-btn { border-color: var(--acc); }
+  .nav-btn .caret { color: var(--acc); font-size: .6rem; }
+  .nav-btn .cur {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px;
+  }
+  .nav-list {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    width: min(460px, 92vw);
+    max-height: min(62vh, 540px);
+    overflow-y: auto;
+    background: var(--bg-panel);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    box-shadow: 0 18px 48px var(--shadow);
+    z-index: 60;
+  }
+  .nav-dd.open .nav-list { display: block; }
+  .nav-item {
+    display: flex;
+    gap: .7em;
+    align-items: baseline;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-dim);
+    font-family: var(--mono);
+    font-size: .72rem;
+    line-height: 1.35;
+    padding: .55rem .85rem;
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .nav-item:last-child { border-bottom: none; }
+  .nav-item b { color: var(--acc); font-weight: 500; flex-shrink: 0; }
+  .nav-item .n { margin-left: auto; color: var(--ink-faint); flex-shrink: 0; }
+  .nav-item:hover { background: var(--bg-card-hover); color: var(--ink); }
+  .nav-item.active { color: var(--ink); background: var(--bg-card); box-shadow: inset 3px 0 0 var(--acc); }
+
+  .search {
+    flex: 1 1 200px;
+    max-width: 380px;
+    position: relative;
+  }
+  .search input {
+    width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: .85rem;
+    padding: .6rem .9rem .6rem 2.3rem;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .search input:focus { border-color: var(--acc); }
+  .search::before {
+    content: "✦";
+    position: absolute;
+    left: .95rem; top: 50%;
+    transform: translateY(-50%);
+    color: var(--acc);
+    font-size: .8rem;
+  }
+  .filters { display: flex; gap: .4rem; }
+  .fbtn, .tbtn {
+    font-family: var(--mono);
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    color: var(--ink-dim);
+    padding: .55rem .95rem;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .fbtn:hover, .tbtn:hover { border-color: var(--ink-dim); color: var(--ink); }
+  .fbtn.active { background: var(--acc); border-color: var(--acc); color: #14122a; }
+  .tbtn { letter-spacing: .05em; }
+  .result-count {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: .7rem;
+    color: var(--ink-faint);
+    letter-spacing: .1em;
+  }
+
+  /* ============ CHAPTER INDEX ============ */
+  .chapter-index {
+    padding: 2.2rem 4vw 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem .5rem;
+  }
+  .chip {
+    font-family: var(--mono);
+    font-size: .68rem;
+    color: var(--ink-dim);
+    text-decoration: none;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: .4rem .8rem;
+    transition: all .2s;
+    display: inline-flex;
+    gap: .5em;
+    align-items: baseline;
+    cursor: pointer;
+    background: none;
+  }
+  .chip:hover { border-color: var(--acc); color: var(--ink); }
+  .chip b { color: var(--acc); font-weight: 500; }
+
+  /* ============ SECTIONS ============ */
+  main { padding: 1rem 4vw 5rem; }
+  section.chapter { padding-top: 3.6rem; }
+  .chapter-head {
+    display: flex;
+    align-items: baseline;
+    gap: 1.4rem;
+    margin-bottom: .9rem;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1rem;
+    position: relative;
+    flex-wrap: wrap;
+  }
+  .chapter-head::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -2px;
+    width: 72px; height: 4px;
+    border-radius: 2px;
+    background: var(--acc);
+  }
+  .ch-num {
+    font-family: var(--display);
+    font-size: 2.2rem;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--acc);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .ch-title {
+    font-family: var(--body);
+    font-weight: 700;
+    font-size: clamp(1.05rem, 2.4vw, 1.55rem);
+    text-transform: uppercase;
+    letter-spacing: .04em;
+  }
+  .ch-years {
+    font-family: var(--mono);
+    font-size: .7rem;
+    color: var(--moon);
+    letter-spacing: .12em;
+    white-space: nowrap;
+  }
+  .ch-count {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: .7rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  .ch-blurb {
+    max-width: 760px;
+    margin-bottom: 1.8rem;
+    color: var(--ink-dim);
+    font-weight: 300;
+    font-size: .92rem;
+  }
+
+  /* ============ GRID + KARTY SERIALI ============ */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.2rem;
+  }
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform .25s cubic-bezier(.2,.7,.3,1), border-color .25s, background .25s, box-shadow .25s;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--acc);
+    background: var(--bg-card-hover);
+    box-shadow: 0 14px 34px var(--shadow);
+  }
+  .thumb {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #000;
+  }
+  .thumb img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(.85);
+    transition: filter .3s, transform .5s;
+  }
+  .card:hover .thumb img {
+    filter: saturate(1.05);
+    transform: scale(1.045);
+  }
+  .thumb::after {
+    content: "▶";
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    color: #fff;
+    background: rgba(185,165,255,0);
+    opacity: 0;
+    transition: all .25s;
+    text-shadow: 0 2px 18px rgba(0,0,0,.7);
+  }
+  .card:hover .thumb::after {
+    opacity: 1;
+    background: rgba(185,165,255,.16);
+  }
+  .ep-count {
+    position: absolute;
+    right: .5rem; bottom: .5rem;
+    font-family: var(--mono);
+    font-size: .65rem;
+    background: rgba(5,5,15,.85);
+    color: #eef0f8;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    letter-spacing: .05em;
+    z-index: 2;
+  }
+  .badge {
+    position: absolute;
+    left: .5rem; top: .5rem;
+    font-family: var(--mono);
+    font-size: .58rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    padding: .2rem .55rem;
+    border-radius: 999px;
+    z-index: 2;
+    background: var(--moon);
+    color: #2a2008;
+  }
+  .card-body {
+    padding: .9rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    flex: 1;
+  }
+  .f-artist {
+    font-family: var(--mono);
+    font-size: .64rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--acc);
+  }
+  .f-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.3;
+  }
+  .f-meta {
+    margin-top: auto;
+    padding-top: .5rem;
+    font-family: var(--mono);
+    font-size: .64rem;
+    color: var(--ink-faint);
+    letter-spacing: .06em;
+    display: flex;
+    gap: .8em;
+    flex-wrap: wrap;
+  }
+
+  /* ============ MODAL SERIALU ============ */
+  .modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(6,7,14,.94);
+    padding: 3vh 3vw;
+  }
+  .modal.open { display: flex; }
+  .modal-inner {
+    width: min(1240px, 96vw);
+    max-height: 94vh;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    grid-template-rows: auto 1fr;
+    gap: 0 1.2rem;
+  }
+  .player-wrap { grid-column: 1; grid-row: 1 / span 2; display: flex; flex-direction: column; min-width: 0; }
+  .player {
+    aspect-ratio: 16/9;
+    width: 100%;
+    background: #000;
+    border: 1px solid #23273d;
+    border-radius: var(--r);
+    overflow: hidden;
+    border-bottom: 3px solid var(--acc);
+  }
+  .player iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .modal-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    padding: 1rem .2rem;
+  }
+  .modal-meta .m-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #eef0f8;
+  }
+  .modal-meta .m-info {
+    font-family: var(--mono);
+    font-size: .7rem;
+    color: #8a86a3;
+    display: flex;
+    gap: 1.4em;
+    flex-wrap: wrap;
+  }
+  .modal-meta a {
+    color: #a9adc4;
+    text-decoration: none;
+    border-bottom: 1px solid var(--acc);
+  }
+  .modal-meta a:hover { color: #eef0f8; }
+
+  .ep-panel {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    overflow: hidden;
+  }
+  .play-all {
+    font-family: var(--mono);
+    font-size: .74rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    background: var(--acc);
+    color: #14122a;
+    border: none;
+    padding: .85rem 1rem;
+    cursor: pointer;
+    transition: background .2s;
+    text-align: left;
+  }
+  .play-all:hover { background: var(--acc-deep); color: #fff; }
+  .play-all.active { background: var(--acc-deep); color: #fff; }
+  .ep-list {
+    list-style: none;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+  }
+  .ep-item {
+    display: flex;
+    gap: .7em;
+    align-items: baseline;
+    padding: .6rem .9rem;
+    border-bottom: 1px solid var(--line);
+    font-size: .82rem;
+    color: var(--ink-dim);
+    cursor: pointer;
+    transition: background .15s, color .15s;
+    line-height: 1.35;
+  }
+  .ep-item:last-child { border-bottom: none; }
+  .ep-item:hover { background: var(--bg-card-hover); color: var(--ink); }
+  .ep-item.active { color: var(--ink); background: var(--bg-card-hover); box-shadow: inset 3px 0 0 var(--acc); }
+  .ep-item .num {
+    font-family: var(--mono);
+    font-size: .66rem;
+    color: var(--acc);
+    flex-shrink: 0;
+    min-width: 1.4em;
+  }
+  .ep-item .dur {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: .64rem;
+    color: var(--ink-faint);
+    flex-shrink: 0;
+  }
+  .ep-item .ext { color: var(--moon); flex-shrink: 0; font-size: .7rem; }
+  .close {
+    position: fixed;
+    top: 1.2rem; right: 1.6rem;
+    font-family: var(--display);
+    font-size: 1.6rem;
+    color: #eef0f8;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 110;
+    transition: color .2s, transform .2s;
+  }
+  .close:hover { color: var(--acc); transform: rotate(90deg); }
+  @media (max-width: 920px) {
+    .modal { padding: 2vh 2vw; align-items: flex-start; overflow-y: auto; }
+    .modal-inner { grid-template-columns: 1fr; grid-template-rows: none; }
+    .player-wrap { grid-column: 1; grid-row: auto; }
+    .ep-panel { grid-column: 1; grid-row: auto; max-height: 44vh; }
+  }
+
+  /* ============ TO TOP / FOOTER ============ */
+  .totop {
+    position: fixed;
+    right: 1.4rem; bottom: 1.4rem;
+    z-index: 40;
+    width: 2.9rem; height: 2.9rem;
+    font-family: var(--display);
+    font-size: 1.05rem;
+    background: var(--bg-card);
+    color: var(--acc);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s, border-color .2s, transform .2s;
+    box-shadow: 0 8px 24px var(--shadow);
+  }
+  .totop.show { opacity: 1; pointer-events: auto; }
+  .totop:hover { border-color: var(--acc); transform: translateY(-3px); }
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 2.5rem 4vw 3rem;
+    font-family: var(--mono);
+    font-size: .68rem;
+    color: var(--ink-faint);
+    letter-spacing: .08em;
+    line-height: 2;
+  }
+  footer b { color: var(--acc); font-weight: 500; }
+  .empty-note {
+    font-family: var(--mono);
+    font-size: .75rem;
+    color: var(--ink-faint);
+    padding: 1rem 0 2rem;
+  }
+  @media (max-width: 720px) {
+    header { padding-top: 3rem; }
+    .moon { width: 76px; height: 76px; right: 5vw; top: 2rem; box-shadow: inset -17px 7px 0 1px var(--moon); }
+    .stats { gap: 1.6rem; }
+    .result-count { display: none; }
+    .nav-btn .cur { max-width: 120px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sky" id="sky" aria-hidden="true"></div>
+
+<header>
+  <div class="moon" aria-hidden="true"></div>
+  <div class="kicker" data-i18n="kicker"></div>
+  <h1 aria-label="Legendarne dobranocki 1980–2000"><span id="titleTop">LEGENDARNE</span><span class="stroke" id="titleBot">DOBRANOCKI</span></h1>
+  <p class="lede"><span data-i18n="lede"></span><span class="src" data-i18n="ledeSrc"></span></p>
+  <div class="stats">
+    <div class="stat"><b id="stat-films">0</b><span data-i18n="films"></span></div>
+    <div class="stat"><b id="stat-artists">0</b><span data-i18n="artists"></span></div>
+    <div class="stat"><b id="stat-chapters">0</b><span data-i18n="chapters"></span></div>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="nav-dd" id="navDD">
+    <button class="nav-btn" id="navBtn" aria-haspopup="true" aria-expanded="false">
+      <span class="caret">▼</span><span class="cur" id="navCur"></span>
+    </button>
+    <div class="nav-list" id="navList" role="menu"></div>
+  </div>
+  <div class="search"><input id="q" type="search" autocomplete="off"></div>
+  <div class="filters">
+    <button class="fbtn active" data-type="all" data-i18n="fAll"></button>
+    <button class="fbtn" data-type="full" data-i18n="fFull"></button>
+    <button class="fbtn" data-type="fragment" data-i18n="fFrag"></button>
+  </div>
+  <button class="tbtn" id="themeBtn" title="motyw / theme">◐</button>
+  <button class="tbtn" id="langBtn"></button>
+  <div class="result-count" id="rcount"></div>
+</div>
+
+<nav class="chapter-index" id="chapterIndex"></nav>
+
+<main id="main"></main>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <button class="close" id="closeBtn" aria-label="Zamknij">✕</button>
+  <div class="modal-inner">
+    <div class="player-wrap">
+      <div class="player" id="player"></div>
+      <div class="modal-meta" id="modalMeta"></div>
+    </div>
+    <div class="ep-panel">
+      <button class="play-all" id="playAllBtn"></button>
+      <ol class="ep-list" id="epList"></ol>
+    </div>
+  </div>
+</div>
+
+<button class="totop" id="toTop" aria-label="Do góry">▲</button>
+
+<footer id="foot"></footer>
+
+<script src="data.js"></script>
+<script>
+// Rozdziały: dobranocki i Wieczorynka w TVP 1980–2000, według studiów i krajów produkcji.
+const SECTIONS = [
+  { pl: "Bielsko-Biała: Bolek i Lolek, Reksio", en: "Bielsko-Biała: Bolek & Lolek, Reksio", years: "1963–1990",
+    bpl: "Studio Filmów Rysunkowych w Bielsku-Białej — najstarsze polskie studio animacji i fabryka dobranocek: dwaj chłopcy bez słów rozumiani na całym świecie, piesek Reksio, smok z Krainy Deszczowców i niefortunny łowca Pampalini.",
+    ben: "The Animated Film Studio in Bielsko-Biała — Poland's oldest animation studio and a bedtime-cartoon factory: two wordless boys understood worldwide, Reksio the dog, the dragon of Rainland and the hapless hunter Pampalini." },
+  { pl: "Se-ma-for: Miś Uszatek i dobranocki z Łodzi", en: "Se-ma-for: Uszatek and the Łódź Puppets", years: "1964–1989",
+    bpl: "Łódzkie Se-ma-for, dwukrotnie nagrodzone Oscarem, wieczorami kładło Polskę spać: lalkowy Miś Uszatek z klapniętym uszkiem, śpiewający Colargol, chłopiec z zaczarowanym ołówkiem i lalkowe Muminki — pierwsza ekranizacja Tove Jansson, którą sama autorka chwaliła.",
+    ben: "Łódź's twice-Oscar-winning Se-ma-for put Poland to bed each night: the floppy-eared puppet Teddy Bear Uszatek, singing Colargol, the boy with the magic pencil, and the puppet Moomins — an adaptation praised by Tove Jansson herself." },
+  { pl: "Studio Miniatur Filmowych: dobranocki z Warszawy", en: "Studio Miniatur Filmowych: Warsaw Bedtimes", years: "1969–1989",
+    bpl: "Warszawskie studio od rysunkowych klasyków: Koziołek Matołek szukający Pacanowa, filozofujący kot Filemon ze starym Bonifacym, mazowiecka Pyza, wróbel Ćwirek i genialny majsterkowicz Dobromir.",
+    ben: "The Warsaw studio of hand-drawn classics: Matołek the Billy Goat seeking Pacanów, the philosophizing cat Filemon with old Bonifacy, Pyza the dumpling girl, Ćwirek the sparrow and Dobromir the boy inventor." },
+  { pl: "Czechosłowacja: Krecik, Rumcajs, Sąsiedzi", en: "Czechoslovakia: Krtek, Rumcajs, Pat & Mat", years: "1957–1989",
+    bpl: "Najbliższy Polsce wielki eksporter dobranocek: Krecik Zdeňka Milera, rozbójnik Rumcajs z lasu Řáholec, wiecznie majstrujący Sąsiedzi oraz leśne skrzaty Żwirek i Muchomorek. Wieczorny kanon dwóch pokoleń.",
+    ben: "The great bedtime exporter next door: Zdeněk Miler's Mole, the outlaw Rumcajs of Řáholec forest, the eternally tinkering neighbours Pat & Mat, and the woodland sprites Křemílek and Vochomůrka. An evening canon for two generations." },
+  { pl: "ZSRR: Wilk i Zając, Kiwaczek, kot Leopold", en: "USSR: Nu Pogodi, Cheburashka, Leopold", years: "1969–1993",
+    bpl: "Sojuzmultfilm w polskiej telewizji: slapstickowy pościg Wilka za Zającem, uszasty Kiwaczek (Czeburaszka) z krokodylem Gieną, pacyfistyczny kot Leopold i wiejska komuna z Prostokwaszyna.",
+    ben: "Soyuzmultfilm on Polish TV: the Wolf's slapstick chase after the Hare, big-eared Cheburashka with Gena the crocodile, the pacifist cat Leopold and the village commune of Prostokvashino." },
+  { pl: "NRD i RFN: Piaskowy Dziadek i Pszczółka Maja", en: "East & West Germany: Sandmännchen and Maya", years: "1959–1990",
+    bpl: "Z NRD przyjeżdżał co wieczór Piaskowy Dziadek sypiący dzieciom sen w oczy; z RFN (i Japonii) przyleciała Pszczółka Maja — z czołówką, którą w polskiej wersji unieśmiertelnił Zbigniew Wodecki.",
+    ben: "From the GDR came the Sandman, sprinkling sleep into children's eyes each night; from West Germany (via Japan) flew Maya the Bee — whose Polish theme song Zbigniew Wodecki made immortal." },
+  { pl: "Węgry: Gustaw i Wodnik Szuwarek", en: "Hungary: Gusztáv and Vízipók", years: "1964–1988",
+    bpl: "Studio Pannonia na dobranoc: pękaty everyman Gustaw w gorzko-śmiesznych miniaturach, podwodny Wodnik Szuwarek tłumaczący dzieciom przyrodę oraz bajkowy Pom Pom.",
+    ben: "Pannonia Studio at bedtime: the rotund everyman Gusztáv in bittersweet miniatures, the underwater Water Spider explaining nature to children, and the fairy-tale Pom Pom." },
+  { pl: "Ameryka w Wieczorynce: Smerfy, Gumisie, Disney", en: "America in the Evening Slot: Smurfs & Disney", years: "1981–1999",
+    bpl: "Przełom lat 80. i 90.: do dobranocki wchodzą Smerfy Hanny-Barbery i telewizyjny Disney — Gumisie, Kacze opowieści, Chip i Dale. Pełne odcinki najłatwiej znaleźć po angielsku; polskie ślady to kultowe czołówki.",
+    ben: "The late '80s and '90s: Hanna-Barbera's Smurfs and television Disney — Gummi Bears, DuckTales, Rescue Rangers — enter the bedtime slot. Full episodes survive mostly in English; the Polish traces are the cult openings." },
+  { pl: "Europa Zachodnia i koprodukcje lat 90.", en: "Western Europe and '90s Co-productions", years: "1974–1999",
+    bpl: "Wieczorynka po 1989 roku: japońsko-fińskie Muminki, plastelinowy Pingu, smok Tabaluga, belgijski Bouli i baśnie braci Grimm w SimsalaGrimm — nowa, międzynarodowa mapa dobranocki.",
+    ben: "The evening slot after 1989: the Japanese-Finnish Moomins, claymation Pingu, Tabaluga the dragon, Belgium's Bouli and the Grimm tales of SimsalaGrimm — bedtime's new international map." },
+];
+
+const I18N = {
+  pl: {
+    kicker: "Legendarne dobranocki polskiej telewizji · 1980 → 2000",
+    lede: "Kreskówki, które przez dwie dekady kładły Polskę spać — od Bolka i Lolka, Reksia i Misia Uszatka, przez Krecika i Wilka z Zającem, po Smerfy, Gumisie i Muminki. Każda bajka to zestaw odcinków z YouTube: oglądaj ciągiem albo wybieraj pojedynczo.",
+    ledeSrc: "Dobranocka: pasmo Telewizji Polskiej nadawane codziennie ok. 19.00 (od lat 90. jako Wieczorynka). Portal obejmuje seriale emitowane w paśmie w latach 1980–2000, także te wyprodukowane wcześniej.",
+    films: "odcinków", artists: "dobranocek", chapters: "rozdziałów",
+    fAll: "Wszystko", fFull: "Całe odcinki", fFrag: "Czołówki i fragmenty",
+    search: "szukaj bajki lub bohatera…",
+    navLabel: "Rozdziały",
+    views: "wyśw.", viewsLong: "wyświetleń", channel: "kanał",
+    open: "otwórz na YouTube ↗",
+    noembed: "Film bez zgody na osadzanie — obejrzyj na YouTube ↗",
+    badgeFrag: "czołówki",
+    empty: "Brak wyników dla tego zapytania.",
+    countWord: n => n === 1 ? "dobranocka" : (n % 10 >= 2 && n % 10 <= 4 && !(n % 100 >= 12 && n % 100 <= 14)) ? "dobranocki" : "dobranocek",
+    epWord: n => n === 1 ? "odcinek" : (n % 10 >= 2 && n % 10 <= 4 && !(n % 100 >= 12 && n % 100 <= 14)) ? "odcinki" : "odcinków",
+    rcount: (a, b) => `${a} / ${b} ODCINKÓW`,
+    playAll: (n) => `▶ Oglądaj ciągiem — ${n} odc.`,
+    playAllOne: "▶ Odtwórz",
+    footer: `<b>LEGENDARNE DOBRANOCKI 1980–2000</b> · dostępność filmów zależy od publikujących kanałów. Część zagranicznych seriali dostępna jest tylko w wersjach oryginalnych; polskie ślady emisji reprezentują czołówki. · Portale siostrzane: <a href="../historia-animacji/index.html" style="color:var(--acc);text-decoration:none;border-bottom:1px solid var(--acc)">HISTORIA ANIMACJI</a> · <a href="../awangarda-kino-portal/index.html" style="color:var(--acc);text-decoration:none;border-bottom:1px solid var(--acc)">KINO AWANGARDY</a>`,
+    langBtn: "EN", htmlLang: "pl"
+  },
+  en: {
+    kicker: "Legendary Polish TV bedtime cartoons · 1980 → 2000",
+    lede: "The cartoons that put Poland to bed for two decades — from Bolek & Lolek, Reksio and Teddy Bear Uszatek, through the Mole and Nu Pogodi, to the Smurfs, Gummi Bears and Moomins. Every show is a set of YouTube episodes: binge them in sequence or pick one at a time.",
+    ledeSrc: "Dobranocka: the Polish TV bedtime slot aired daily around 7 pm (from the 1990s as Wieczorynka). The portal covers series broadcast in the slot in 1980–2000, including ones produced earlier.",
+    films: "episodes", artists: "shows", chapters: "chapters",
+    fAll: "All", fFull: "Full episodes", fFrag: "Openings & fragments",
+    search: "search a show or character…",
+    navLabel: "Chapters",
+    views: "views", viewsLong: "views", channel: "channel",
+    open: "open on YouTube ↗",
+    noembed: "Embedding disabled — watch on YouTube ↗",
+    badgeFrag: "openings",
+    empty: "No results for this query.",
+    countWord: n => n === 1 ? "show" : "shows",
+    epWord: n => n === 1 ? "episode" : "episodes",
+    rcount: (a, b) => `${a} / ${b} EPISODES`,
+    playAll: (n) => `▶ Play all — ${n} ep.`,
+    playAllOne: "▶ Play",
+    footer: `<b>LEGENDARY BEDTIME CARTOONS 1980–2000</b> · availability depends on the publishing channels. Some foreign series survive only in original languages; Polish broadcast traces are represented by openings. · Sister portals: <a href="../historia-animacji/index.html" style="color:var(--acc);text-decoration:none;border-bottom:1px solid var(--acc)">ANIMATION HISTORY</a> · <a href="../awangarda-kino-portal/index.html" style="color:var(--acc);text-decoration:none;border-bottom:1px solid var(--acc)">AVANT-GARDE CINEMA</a>`,
+    langBtn: "PL", htmlLang: "en"
+  }
+};
+
+const films = (window.FILMS || []).filter(f => f && f.id);
+let typeFilter = 'all';
+let query = '';
+let lang = localStorage.getItem('db-lang') || 'pl';
+let theme = localStorage.getItem('db-theme') || 'dark';
+
+const T = () => I18N[lang];
+const S = sec => SECTIONS.find(s => s.pl === sec);
+const secName = sec => { const s = S(sec); return s ? (lang === 'en' ? s.en : s.pl) : sec; };
+const secBlurb = sec => { const s = S(sec); return s ? (lang === 'en' ? s.ben : s.bpl) : ''; };
+const norm = s => (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+const fmtViews = v => {
+  if (!v) return '';
+  if (v >= 1e6) return (v/1e6).toFixed(1).replace('.0','') + 'M';
+  if (v >= 1e3) return (v/1e3).toFixed(0) + 'K';
+  return String(v);
+};
+const fmtDur = sec => {
+  if (!sec) return '';
+  const h = Math.floor(sec/3600), m = Math.round((sec%3600)/60);
+  return h ? `${h} h ${String(m).padStart(2,'0')} min` : `${m} min`;
+};
+const pad2 = n => String(n).padStart(2, '0');
+
+// ---- grupowanie: serial (artist) -> odcinki ----
+const SERIES = [];           // [{key, section, artist, eps:[film,...]}] w kolejności danych
+{
+  const idx = new Map();
+  films.forEach((f, i) => {
+    const key = f.section + '||' + f.artist;
+    if (!idx.has(key)) {
+      idx.set(key, SERIES.length);
+      SERIES.push({ key, section: f.section, artist: f.artist, eps: [] });
+    }
+    SERIES[idx.get(key)].eps.push({ ...f, _i: i });
+  });
+}
+
+function epMatchesType(f) {
+  if (typeFilter === 'full' && f.type !== 'full') return false;
+  if (typeFilter === 'fragment' && f.type === 'full') return false;
+  return true;
+}
+
+function matchedEps(s) {
+  const eps = s.eps.filter(epMatchesType);
+  if (!query) return eps;
+  const words = query.split(/\s+/);
+  const serHay = norm(s.artist + ' ' + s.section + ' ' + secName(s.section));
+  if (words.every(w => serHay.includes(w))) return eps;
+  return eps.filter(f => {
+    const hay = serHay + ' ' + norm(f.film);
+    return words.every(w => hay.includes(w));
+  });
+}
+
+function cardHTML(s, eps, si) {
+  const first = eps[0];
+  const total = eps.reduce((a, f) => a + (f.duration_seconds || 0), 0);
+  const allFrag = eps.every(f => f.type !== 'full');
+  const years = [...new Set(eps.map(f => f.year).filter(Boolean))];
+  const yr = years.length ? (Math.min(...years) === Math.max(...years) ? `${years[0]}` : `${Math.min(...years)}–${Math.max(...years)}`) : '';
+  return `<article class="card" data-skey="${s.key.replace(/"/g,'&quot;')}" tabindex="0" role="button" aria-label="${s.artist}">
+    <div class="thumb">
+      ${allFrag ? `<span class="badge">${T().badgeFrag}</span>` : ''}
+      <img loading="lazy" src="https://i.ytimg.com/vi/${first.id}/hqdefault.jpg"
+           onload="if(this.naturalWidth>120){const m=new Image();m.onload=()=>{if(m.naturalWidth>640)this.src=m.src};m.src='https://i.ytimg.com/vi/${first.id}/maxresdefault.jpg'}"
+           alt="${s.artist}">
+      <span class="ep-count">${eps.length} ${T().epWord(eps.length)}</span>
+    </div>
+    <div class="card-body">
+      <div class="f-artist">${secName(s.section)}</div>
+      <div class="f-title">${s.artist}</div>
+      <div class="f-meta">
+        ${yr ? `<span>${yr}</span>` : ''}
+        ${total ? `<span>⏱ ${fmtDur(total)}</span>` : ''}
+      </div>
+    </div>
+  </article>`;
+}
+
+let visibleSections = []; // [{sec, si, anchor, num}]
+
+function render() {
+  const main = document.getElementById('main');
+  const idxNav = document.getElementById('chapterIndex');
+  const navList = document.getElementById('navList');
+  let html = '', idxHtml = '', navHtml = '', shownEps = 0, chapters = 0;
+  visibleSections = [];
+
+  SECTIONS.forEach((secObj, si) => {
+    const sec = secObj.pl;
+    const secSeries = SERIES
+      .filter(s => s.section === sec)
+      .map(s => ({ s, eps: matchedEps(s) }))
+      .filter(x => x.eps.length);
+    if (!secSeries.length) return;
+    chapters++;
+    const anchor = 'ch' + si;
+    const num = pad2(chapters);
+    visibleSections.push({sec, si, anchor, num});
+    const name = secName(sec);
+    const epTotal = secSeries.reduce((a, x) => a + x.eps.length, 0);
+    idxHtml += `<button class="chip" data-goto="${anchor}"><b>${num}</b> ${name}</button>`;
+    navHtml += `<button class="nav-item" role="menuitem" data-goto="${anchor}" data-anchor="${anchor}"><b>${num}</b> ${name} <span class="n">${secSeries.length}</span></button>`;
+    html += `<section class="chapter" id="${anchor}">
+      <div class="chapter-head">
+        <div class="ch-num">${num}</div>
+        <div class="ch-title">${name}</div>
+        <div class="ch-years">${secObj.years}</div>
+        <div class="ch-count">${secSeries.length} ${T().countWord(secSeries.length)} · ${epTotal} ${T().epWord(epTotal)}</div>
+      </div>
+      <p class="ch-blurb">${secBlurb(sec)}</p>
+      <div class="grid">${secSeries.map(x => cardHTML(x.s, x.eps, si)).join('')}</div>
+    </section>`;
+    shownEps += epTotal;
+  });
+
+  main.innerHTML = html || `<p class="empty-note">${T().empty}</p>`;
+  idxNav.innerHTML = idxHtml;
+  navList.innerHTML = navHtml;
+  document.getElementById('rcount').textContent = T().rcount(shownEps, films.length);
+  updateSpy();
+}
+
+function applyI18n() {
+  const t = T();
+  document.documentElement.lang = t.htmlLang;
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t[el.dataset.i18n]; });
+  document.getElementById('q').placeholder = t.search;
+  document.getElementById('langBtn').textContent = t.langBtn;
+  document.getElementById('foot').innerHTML = t.footer;
+  render();
+}
+
+// ---- modal serialu: playlista + pojedyncze odcinki ----
+let curSeries = null;
+
+function embedSingle(f) {
+  return f.noembed
+    ? `<a href="https://www.youtube.com/watch?v=${f.id}" target="_blank" rel="noopener" style="display:grid;place-items:center;width:100%;height:100%;text-decoration:none;background:url('https://i.ytimg.com/vi/${f.id}/hqdefault.jpg') center/cover;position:relative">
+         <span style="font-family:var(--mono);font-size:.85rem;letter-spacing:.1em;background:rgba(11,13,23,.9);border:1px solid var(--acc);border-radius:999px;color:#eef0f8;padding:1rem 1.6rem;text-align:center">
+           ${T().noembed}
+         </span></a>`
+    : `<iframe src="https://www.youtube-nocookie.com/embed/${f.id}?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+}
+
+function setMeta(f, s) {
+  document.getElementById('modalMeta').innerHTML = `
+    <div class="m-title">${s.artist}${f ? ` — ${f.film}` : ''}</div>
+    <div class="m-info">
+      ${f && f.duration ? `<span>⏱ ${f.duration}</span>` : ''}
+      ${f && f.views ? `<span>${fmtViews(f.views)} ${T().viewsLong}</span>` : ''}
+      ${f && f.channel ? `<span>${T().channel}: ${f.channel}</span>` : ''}
+      ${f ? `<a href="https://www.youtube.com/watch?v=${f.id}" target="_blank" rel="noopener">${T().open}</a>` : ''}
+    </div>`;
+}
+
+function markActive(idx, playlistMode) {
+  document.querySelectorAll('.ep-item').forEach((el, i) =>
+    el.classList.toggle('active', !playlistMode && i === idx));
+  document.getElementById('playAllBtn').classList.toggle('active', !!playlistMode);
+}
+
+function playEp(idx) {
+  const f = curSeries.eps[idx];
+  document.getElementById('player').innerHTML = embedSingle(f);
+  setMeta(f, curSeries);
+  markActive(idx, false);
+}
+
+function playAll() {
+  const ids = curSeries.eps.filter(f => !f.noembed).map(f => f.id);
+  if (!ids.length) { playEp(0); return; }
+  const src = `https://www.youtube-nocookie.com/embed/${ids[0]}?${ids.length > 1 ? 'playlist=' + ids.slice(1).join(',') + '&' : ''}autoplay=1&rel=0`;
+  document.getElementById('player').innerHTML =
+    `<iframe src="${src}" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>`;
+  setMeta(null, curSeries);
+  markActive(-1, true);
+}
+
+function openSeries(skey) {
+  const s = SERIES.find(x => x.key === skey);
+  if (!s) return;
+  curSeries = { ...s, eps: s.eps };   // pełna lista odcinków niezależnie od filtrów
+  const t = T();
+  const list = document.getElementById('epList');
+  list.innerHTML = s.eps.map((f, i) => `
+    <li class="ep-item" data-ep="${i}">
+      <span class="num">${i + 1}</span>
+      <span class="tit">${f.film}${f.year ? ` <span style="color:var(--ink-faint)">(${f.year})</span>` : ''}${f.noembed ? ' <span class="ext" title="tylko na YouTube">↗</span>' : ''}</span>
+      <span class="dur">${f.duration || ''}</span>
+    </li>`).join('');
+  const embeddable = s.eps.filter(f => !f.noembed).length;
+  const btn = document.getElementById('playAllBtn');
+  btn.textContent = embeddable > 1 ? t.playAll(embeddable) : t.playAllOne;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (embeddable > 1) playAll(); else playEp(0);
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.getElementById('player').innerHTML = '';
+  document.body.style.overflow = '';
+  curSeries = null;
+}
+
+// ---- scroll spy ----
+function updateSpy() {
+  const t = T();
+  let current = null;
+  for (const vs of visibleSections) {
+    const el = document.getElementById(vs.anchor);
+    if (el && el.getBoundingClientRect().top <= 140) current = vs;
+    else break;
+  }
+  const cur = document.getElementById('navCur');
+  cur.textContent = current ? `${current.num} · ${secName(current.sec)}` : `${t.navLabel} (${visibleSections.length})`;
+  document.querySelectorAll('.nav-item').forEach(it => {
+    it.classList.toggle('active', !!current && it.dataset.anchor === current.anchor);
+  });
+  document.getElementById('toTop').classList.toggle('show', window.scrollY > 700);
+}
+let spyTick = false;
+window.addEventListener('scroll', () => {
+  if (spyTick) return;
+  spyTick = true;
+  requestAnimationFrame(() => { updateSpy(); spyTick = false; });
+}, {passive: true});
+
+// ---- events ----
+document.addEventListener('click', e => {
+  const goto = e.target.closest('[data-goto]');
+  if (goto) {
+    document.getElementById('navDD').classList.remove('open');
+    document.getElementById(goto.dataset.goto)?.scrollIntoView({behavior: 'smooth'});
+    return;
+  }
+  if (e.target.closest('#navBtn')) {
+    const dd = document.getElementById('navDD');
+    dd.classList.toggle('open');
+    document.getElementById('navBtn').setAttribute('aria-expanded', dd.classList.contains('open'));
+    if (dd.classList.contains('open')) {
+      const act = dd.querySelector('.nav-item.active');
+      if (act) act.scrollIntoView({block: 'center'});
+    }
+    return;
+  }
+  if (!e.target.closest('.nav-dd')) document.getElementById('navDD').classList.remove('open');
+  const ep = e.target.closest('.ep-item');
+  if (ep) { playEp(+ep.dataset.ep); return; }
+  if (e.target.id === 'playAllBtn') { playAll(); return; }
+  const card = e.target.closest('.card');
+  if (card) { openSeries(card.dataset.skey); return; }
+  if (e.target.id === 'modal' || e.target.id === 'closeBtn') closeModal();
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeModal(); document.getElementById('navDD').classList.remove('open'); }
+  if (e.key === 'Enter' && document.activeElement?.classList.contains('card'))
+    openSeries(document.activeElement.dataset.skey);
+});
+document.getElementById('q').addEventListener('input', e => { query = norm(e.target.value.trim()); render(); });
+document.querySelectorAll('.fbtn').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.fbtn').forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  typeFilter = b.dataset.type;
+  render();
+}));
+document.getElementById('toTop').addEventListener('click', () => window.scrollTo({top: 0, behavior: 'smooth'}));
+function applyTheme() {
+  document.documentElement.classList.toggle('light', theme === 'light');
+  // w nocy proponujemy dzień (☀), w dzień — noc (☾)
+  document.getElementById('themeBtn').textContent = theme === 'dark' ? '☀' : '☾';
+}
+document.getElementById('themeBtn').addEventListener('click', () => {
+  theme = theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('db-theme', theme);
+  applyTheme();
+});
+document.getElementById('langBtn').addEventListener('click', () => {
+  lang = lang === 'pl' ? 'en' : 'pl';
+  localStorage.setItem('db-lang', lang);
+  applyI18n();
+});
+
+// ---- nocne niebo: gwiazdy, dryf, spadające gwiazdy ----
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const sky = document.getElementById('sky');
+  let html = '';
+  for (let i = 0; i < 80; i++) {
+    const x = (Math.random()*100).toFixed(2), y = (Math.random()*100).toFixed(2);
+    const s = (Math.random()*1.7 + .8).toFixed(1);
+    const tw = (Math.random()*4 + 2).toFixed(1);
+    const del = (Math.random()*6).toFixed(1);
+    const drift = Math.random() < .45;
+    const driftDur = (Math.random()*90 + 50).toFixed(0);
+    const violet = Math.random() < .18 ? ' violet' : '';
+    html += `<span class="star${violet}${drift ? ' drift' : ''}" style="left:${x}%;top:${y}%;width:${s}px;height:${s}px;animation-duration:${tw}s${drift ? ',' + driftDur + 's' : ''};animation-delay:${del}s${drift ? ',0s' : ''}"></span>`;
+  }
+  html += `<span class="shooting" style="top:10%;left:72%;animation-delay:3s"></span>`;
+  html += `<span class="shooting" style="top:28%;left:45%;animation-delay:9.5s;animation-duration:17s"></span>`;
+  html += `<span class="shooting" style="top:5%;left:22%;animation-delay:19s;animation-duration:26s"></span>`;
+  // obłoki na dzień (widoczne tylko w trybie jasnym)
+  for (let i = 0; i < 6; i++) {
+    const y = (Math.random()*70 + 4).toFixed(1);
+    const w = (Math.random()*70 + 60)|0;
+    const dur = (Math.random()*110 + 90)|0;
+    const del = -(Math.random()*dur).toFixed(0);
+    const op = (Math.random()*.25 + .4).toFixed(2);
+    html += `<span class="cloud" style="top:${y}%;width:${w}px;opacity:${op};animation-duration:${dur}s;animation-delay:${del}s"></span>`;
+  }
+  sky.innerHTML = html;
+})();
+
+// ---- tytuł na dobranoc: LEGENDARNE/DOBRANOCKI <-> BEDTIME/LEGENDS ----
+// Litery kolejno rozpływają się w rozmyciu i tak samo łagodnie wyłaniają —
+// żadnego migotania: strona ma wyciszać, nie pobudzać.
+(function(){
+  const top = document.getElementById('titleTop');
+  const bot = document.getElementById('titleBot');
+  if (!top || !bot) return;
+  const TITLES = [ {t:'LEGENDARNE', b:'DOBRANOCKI'}, {t:'BEDTIME', b:'LEGENDS'} ];
+  top.textContent = TITLES[0].t; bot.textContent = TITLES[0].b;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const HOLD = 8000;   // spokojny oddech między zmianami
+  const STEP = 90;     // odstęp między kolejnymi literami
+  const FADE = 1100;   // czas rozpłynięcia litery (jak w CSS .tl)
+
+  const setLine = (el, text, hidden) => {
+    el.innerHTML = [...text].map((ch, k) =>
+      `<span class="tl${hidden ? ' out' : ''}" style="transition-delay:${k * STEP}ms">${ch === ' ' ? '&nbsp;' : ch}</span>`
+    ).join('');
+  };
+  const lineDur = text => text.length * STEP + FADE;
+
+  let i = 0;
+  setLine(top, TITLES[0].t, false);
+  setLine(bot, TITLES[0].b, false);
+
+  function cycle() {
+    const cur = TITLES[i];
+    i = (i + 1) % TITLES.length;
+    const next = TITLES[i];
+    // 1) łagodne rozpłynięcie obecnych liter
+    [top, bot].forEach(el => el.querySelectorAll('.tl').forEach(s => s.classList.add('out')));
+    const outDur = Math.max(lineDur(cur.t), lineDur(cur.b));
+    setTimeout(() => {
+      // 2) nowe litery startują niewidoczne...
+      setLine(top, next.t, true);
+      setLine(bot, next.b, true);
+      void top.offsetWidth;   // wymuszony reflow — stan "out" zostaje zarejestrowany
+      // 3) ...i kolejno się wyłaniają
+      [top, bot].forEach(el => el.querySelectorAll('.tl').forEach(s => s.classList.remove('out')));
+      setTimeout(cycle, Math.max(lineDur(next.t), lineDur(next.b)) + HOLD);
+    }, outDur);
+  }
+  setTimeout(cycle, HOLD);
+})();
+
+// ---- init ----
+applyTheme();
+document.getElementById('stat-films').textContent = films.length;
+document.getElementById('stat-artists').textContent = new Set(films.map(f => f.artist)).size;
+document.getElementById('stat-chapters').textContent = new Set(films.map(f => f.section)).size;
+applyI18n();
+</script>
+</body>
+</html>
