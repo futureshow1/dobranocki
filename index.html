@@ -619,6 +619,11 @@
     border-bottom: 1px solid var(--acc);
   }
   .modal-meta a:hover { color: #eef0f8; }
+  .m-share {
+    font: inherit; color: #a9adc4; background: none; border: none;
+    border-bottom: 1px solid var(--acc); padding: 0; cursor: pointer;
+  }
+  .m-share:hover { color: #eef0f8; }
 
   .ep-panel {
     grid-column: 2;
@@ -847,6 +852,7 @@ const I18N = {
     navLabel: "Rozdziały",
     views: "wyśw.", viewsLong: "wyświetleń", channel: "kanał",
     open: "otwórz na YouTube ↗",
+    share: "kopiuj link", shared: "skopiowano ✓",
     noembed: "Film bez zgody na osadzanie — obejrzyj na YouTube ↗",
     badgeFrag: "czołówki",
     empty: "Brak wyników dla tego zapytania.",
@@ -868,6 +874,7 @@ const I18N = {
     navLabel: "Chapters",
     views: "views", viewsLong: "views", channel: "channel",
     open: "open on YouTube ↗",
+    share: "copy link", shared: "copied ✓",
     noembed: "Embedding disabled — watch on YouTube ↗",
     badgeFrag: "openings",
     empty: "No results for this query.",
@@ -1036,7 +1043,17 @@ function setMeta(f, s) {
       ${f && f.views ? `<span>${fmtViews(f.views)} ${T().viewsLong}</span>` : ''}
       ${f && f.channel ? `<span>${T().channel}: ${f.channel}</span>` : ''}
       ${f ? `<a href="https://www.youtube.com/watch?v=${f.id}" target="_blank" rel="noopener">${T().open}</a>` : ''}
+      <button class="m-share" id="mShare">🔗 ${T().share}</button>
     </div>`;
+  const cel = f ? '#odcinek=' + f.id : '#serial=' + encodeURIComponent(s.key);
+  document.getElementById('mShare').addEventListener('click', function () {
+    const link = location.origin + location.pathname + cel;
+    const btn = this;
+    const ok = () => { btn.textContent = '✓ ' + T().shared; setTimeout(() => { btn.textContent = '🔗 ' + T().share; }, 2000); };
+    if (navigator.clipboard) navigator.clipboard.writeText(link).then(ok, () => prompt(T().share, link));
+    else prompt(T().share, link);
+  });
+  try { history.replaceState(null, '', cel); } catch (e) {}
 }
 
 function markActive(idx, playlistMode) {
@@ -1087,7 +1104,26 @@ function closeModal() {
   document.getElementById('player').innerHTML = '';
   document.body.style.overflow = '';
   curSeries = null;
+  if (/^#(odcinek|serial)=/.test(location.hash)) {
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+  }
 }
+
+/* ---- udostępnianie: #odcinek=<id> albo #serial=<klucz> ---- */
+function openFromHash() {
+  const h = location.hash;
+  if (h.indexOf('#odcinek=') === 0) {
+    const id = decodeURIComponent(h.slice(9));
+    const s = SERIES.find(x => x.eps.some(f => f.id === id));
+    if (!s) return;
+    openSeries(s.key);
+    playEp(s.eps.findIndex(f => f.id === id));
+  } else if (h.indexOf('#serial=') === 0) {
+    const key = decodeURIComponent(h.slice(8));
+    if (SERIES.some(x => x.key === key)) openSeries(key);
+  }
+}
+addEventListener('hashchange', openFromHash);
 
 // ---- scroll spy ----
 function updateSpy() {
@@ -1249,6 +1285,7 @@ document.getElementById('stat-films').textContent = films.length;
 document.getElementById('stat-artists').textContent = new Set(films.map(f => f.artist)).size;
 document.getElementById('stat-chapters').textContent = new Set(films.map(f => f.section)).size;
 applyI18n();
+openFromHash();
 </script>
 </body>
 </html>
