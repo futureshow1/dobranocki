@@ -1,4 +1,4 @@
-// Wygenerowane 2026-07-31 przez tools/build_data.py — 322 filmów, 9 rozdziałów.
+// Wygenerowane 2026-09-11 przez tools/build_data.py — 326 filmów, 9 rozdziałów.
 window.FILMS = [
  {
   "section": "Bielsko-Biała: Bolek i Lolek, Reksio",
@@ -2604,6 +2604,20 @@ window.FILMS = [
  },
  {
   "section": "ZSRR: Wilk i Zając, Kiwaczek, kot Leopold",
+  "artist": "Konik Garbusek",
+  "film": "Film z 1947 — polski dubbing (VHS)",
+  "year": 1947,
+  "url": "https://www.youtube.com/watch?v=tcbzzn0jFic",
+  "id": "tcbzzn0jFic",
+  "duration": "1:03:56",
+  "duration_seconds": 3836,
+  "views": 5600,
+  "channel": "Archiwizator Wilkoń",
+  "thumbnail": "https://i.ytimg.com/vi/tcbzzn0jFic/hqdefault.jpg",
+  "type": "full"
+ },
+ {
+  "section": "ZSRR: Wilk i Zając, Kiwaczek, kot Leopold",
   "artist": "Malec i Karlsson",
   "film": "Malec i Karlsson — wszystkie części",
   "year": 1968,
@@ -2726,6 +2740,20 @@ window.FILMS = [
   "views": 3270117,
   "channel": "Советские мультфильмы - Золотая коллекция СССР",
   "thumbnail": "https://i.ytimg.com/vi/wsgJ91Z6a_s/hqdefault.jpg",
+  "type": "full"
+ },
+ {
+  "section": "ZSRR: Wilk i Zając, Kiwaczek, kot Leopold",
+  "artist": "Konik Garbusek",
+  "film": "Remake z 1975 (wersja oryginalna, RU)",
+  "year": 1975,
+  "url": "https://www.youtube.com/watch?v=xS2WX1PiZuQ",
+  "id": "xS2WX1PiZuQ",
+  "duration": "1:10:44",
+  "duration_seconds": 4244,
+  "views": 7130850,
+  "channel": "Мультики студии Союзмультфильм",
+  "thumbnail": "https://i.ytimg.com/vi/xS2WX1PiZuQ/hqdefault.jpg",
   "type": "full"
  },
  {
@@ -3178,7 +3206,7 @@ window.FILMS = [
   "type": "full"
  },
  {
-  "section": "Węgry: Gustaw i Wodnik Szuwarek",
+  "section": "Węgry: Gustaw i Pająk chwat",
   "artist": "Gustaw",
   "film": "Gustaw zaprowadza porządek",
   "year": 1964,
@@ -3192,7 +3220,7 @@ window.FILMS = [
   "type": "full"
  },
  {
-  "section": "Węgry: Gustaw i Wodnik Szuwarek",
+  "section": "Węgry: Gustaw i Pająk chwat",
   "artist": "Gustaw",
   "film": "Gustaw pesymista",
   "year": 1970,
@@ -3206,7 +3234,7 @@ window.FILMS = [
   "type": "full"
  },
  {
-  "section": "Węgry: Gustaw i Wodnik Szuwarek",
+  "section": "Węgry: Gustaw i Pająk chwat",
   "artist": "Gustaw",
   "film": "Gustaw odpoczywa (emisja PTK)",
   "year": 1970,
@@ -3220,7 +3248,7 @@ window.FILMS = [
   "type": "full"
  },
  {
-  "section": "Węgry: Gustaw i Wodnik Szuwarek",
+  "section": "Węgry: Gustaw i Pająk chwat",
   "artist": "Gustaw",
   "film": "Gustaw oszukuje",
   "year": 1970,
@@ -3234,7 +3262,7 @@ window.FILMS = [
   "type": "full"
  },
  {
-  "section": "Węgry: Gustaw i Wodnik Szuwarek",
+  "section": "Węgry: Gustaw i Pająk chwat",
   "artist": "Gustaw",
   "film": "Gustaw łamie prawo",
   "year": 1970,
@@ -3249,49 +3277,7 @@ window.FILMS = [
   "noembed": true
  },
  {
-  "section": "Węgry: Gustaw i Wodnik Szuwarek",
-  "artist": "Frakk, postrach kotów",
-  "film": "Frakk i leniwe koty (HU)",
-  "year": 1972,
-  "url": "https://www.youtube.com/watch?v=ySElAZdquTs",
-  "id": "ySElAZdquTs",
-  "duration": "7:57",
-  "duration_seconds": 477,
-  "views": 9805,
-  "channel": "Margit Rózsa",
-  "thumbnail": "https://i.ytimg.com/vi/ySElAZdquTs/hqdefault.jpg",
-  "type": "full"
- },
- {
-  "section": "Węgry: Gustaw i Wodnik Szuwarek",
-  "artist": "Wodnik Szuwarek",
-  "film": "Odcinek odnowiony cyfrowo (HU)",
-  "year": 1978,
-  "url": "https://www.youtube.com/watch?v=keBgtuq30So",
-  "id": "keBgtuq30So",
-  "duration": "6:43",
-  "duration_seconds": 403,
-  "views": 146989,
-  "channel": "Kecskeméti Televízió",
-  "thumbnail": "https://i.ytimg.com/vi/keBgtuq30So/hqdefault.jpg",
-  "type": "full"
- },
- {
-  "section": "Węgry: Gustaw i Wodnik Szuwarek",
-  "artist": "Wodnik Szuwarek",
-  "film": "Wodnik Szuwarek — odcinek",
-  "year": 1978,
-  "url": "https://www.youtube.com/watch?v=iqbpK30LwHI",
-  "id": "iqbpK30LwHI",
-  "duration": "7:54",
-  "duration_seconds": 474,
-  "views": 52945,
-  "channel": "Boròka Csatorna",
-  "thumbnail": "https://i.ytimg.com/vi/iqbpK30LwHI/hqdefault.jpg",
-  "type": "full"
- },
- {
-  "section": "Węgry: Gustaw i Wodnik Szuwarek",
+  "section": "Węgry: Gustaw i Pająk chwat",
   "artist": "Pom Pom",
   "film": "Artur Gombóc i czekolada (fragment)",
   "year": 1980,
@@ -3302,6 +3288,76 @@ window.FILMS = [
   "views": 716806,
   "channel": "J MT",
   "thumbnail": "https://i.ytimg.com/vi/zl1zR042Qh0/hqdefault.jpg",
+  "type": "fragment"
+ },
+ {
+  "section": "Węgry: Gustaw i Pająk chwat",
+  "artist": "Pająk chwat wszystkich brat",
+  "film": "Czołówka z piosenką (HU)",
+  "year": null,
+  "url": "https://www.youtube.com/watch?v=w8E_IF8CZQ4",
+  "id": "w8E_IF8CZQ4",
+  "duration": "0:54",
+  "duration_seconds": 54,
+  "views": 92564,
+  "channel": "Jetix Hungarikum",
+  "thumbnail": "https://i.ytimg.com/vi/w8E_IF8CZQ4/hqdefault.jpg",
+  "type": "fragment"
+ },
+ {
+  "section": "Węgry: Gustaw i Pająk chwat",
+  "artist": "Pająk chwat wszystkich brat",
+  "film": "Odcinek (HU)",
+  "year": null,
+  "url": "https://www.youtube.com/watch?v=iqbpK30LwHI",
+  "id": "iqbpK30LwHI",
+  "duration": "7:54",
+  "duration_seconds": 474,
+  "views": 52945,
+  "channel": "Boròka Csatorna",
+  "thumbnail": "https://i.ytimg.com/vi/iqbpK30LwHI/hqdefault.jpg",
+  "type": "full"
+ },
+ {
+  "section": "Węgry: Gustaw i Pająk chwat",
+  "artist": "Pająk chwat wszystkich brat",
+  "film": "Odcinek z retro-emisji TV (HU)",
+  "year": null,
+  "url": "https://www.youtube.com/watch?v=2XkHwq0V6tI",
+  "id": "2XkHwq0V6tI",
+  "duration": "11:35",
+  "duration_seconds": 695,
+  "views": 21855,
+  "channel": "Kisfecske: a Retrócsatorna",
+  "thumbnail": "https://i.ytimg.com/vi/2XkHwq0V6tI/hqdefault.jpg",
+  "type": "full"
+ },
+ {
+  "section": "Węgry: Gustaw i Pająk chwat",
+  "artist": "Pająk chwat wszystkich brat",
+  "film": "Fragment polskiej emisji (Wieczorynka, 1988)",
+  "year": null,
+  "url": "https://www.youtube.com/watch?v=k4hFvRPrTu0",
+  "id": "k4hFvRPrTu0",
+  "duration": "2:47",
+  "duration_seconds": 167,
+  "views": 163848,
+  "channel": "szadzki",
+  "thumbnail": "https://i.ytimg.com/vi/k4hFvRPrTu0/hqdefault.jpg",
+  "type": "fragment"
+ },
+ {
+  "section": "Węgry: Gustaw i Pająk chwat",
+  "artist": "Pająk chwat wszystkich brat",
+  "film": "Zapowiedź wersji odnowionej cyfrowo (HU)",
+  "year": null,
+  "url": "https://www.youtube.com/watch?v=fh-FDqBES20",
+  "id": "fh-FDqBES20",
+  "duration": "1:02",
+  "duration_seconds": 62,
+  "views": 129152,
+  "channel": "Trailerpercek",
+  "thumbnail": "https://i.ytimg.com/vi/fh-FDqBES20/hqdefault.jpg",
   "type": "fragment"
  },
  {

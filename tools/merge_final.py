@@ -67,7 +67,7 @@ FIX = {
     ("Pszczółka Maja", "Pszczółka Maja (1975) — odcinek po polsku"): {"film": "Spotkanie z Burczymuchą (odc. 5)"},
     ("Pszczółka Maja", "Die Biene Maja — Maja wird geboren"): {"film": "Narodziny Mai (odc. 1, DE)"},
     ("Gustaw", "Gustaw (Gusztáv) — odcinek"): {"film": "Gustaw zaprowadza porządek"},
-    ("Wodnik Szuwarek", "Wodnik Szuwarek (Vízipók-csodapók) — odcinek"): {"film": "Odcinek odnowiony cyfrowo (HU)"},
+    ("Pająk chwat wszystkich brat", "Pająk chwat wszystkich brat (Vízipók-csodapók) — odcinek"): {"film": "Odcinek odnowiony cyfrowo (HU)"},
     ("Pom Pom", "Pom Pom meséi — odcinek"): {"film": "Artur Gombóc i czekolada (fragment)", "type": "fragment"},
     ("Kot Miau (Frakk)", "Frakk, a macskák réme — odcinek"): {"artist": "Frakk, postrach kotów", "film": "Frakk i leniwe koty (HU)"},
     ("Smerfy", "Smerfy — pełny odcinek"): {"film": "The Smurfette (odcinek, EN)"},

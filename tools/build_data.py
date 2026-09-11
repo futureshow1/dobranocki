@@ -19,7 +19,7 @@ SECTIONS_PL = [
     "Czechosłowacja: Krecik, Rumcajs, Sąsiedzi",
     "ZSRR: Wilk i Zając, Kiwaczek, kot Leopold",
     "NRD i RFN: Piaskowy Dziadek i Pszczółka Maja",
-    "Węgry: Gustaw i Wodnik Szuwarek",
+    "Węgry: Gustaw i Pająk chwat",
     "Ameryka w Wieczorynce: Smerfy, Gumisie, Disney",
     "Europa Zachodnia i koprodukcje lat 90.",
 ]

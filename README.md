@@ -1,6 +1,6 @@
 # LEGENDARNE DOBRANOCKI · 1980–2000
 
-Portal streamingowy legendarnych dobranocek — polskich i zagranicznych — z wieczornego pasma TV: **322 zweryfikowane odcinki 53 seriali w 9 rozdziałach** — od Bolka i Lolka, Reksia i Misia Uszatka, przez Krecika, Rumcajsa i Wilka z Zającem, po Smerfy, Gumisie i Muminki.
+Portal streamingowy legendarnych dobranocek — polskich i zagranicznych — z wieczornego pasma TV: **326 zweryfikowanych odcinków 53 seriali w 9 rozdziałach** — od Bolka i Lolka, Reksia i Misia Uszatka, przez Krecika, Rumcajsa i Wilka z Zającem, po Smerfy, Gumisie i Muminki.
 
 **LIVE:** https://futureshow1.github.io/futureshow/projects/dobranocki/
 
@@ -22,7 +22,7 @@ Trzeci portal z rodziny filmowej FutureShow — obok [Historii Animacji](https:/
 4. Czechosłowacja: Krecik, Rumcajs, Sąsiedzi
 5. ZSRR: Wilk i Zając, Kiwaczek, kot Leopold
 6. NRD i RFN: Piaskowy Dziadek i Pszczółka Maja
-7. Węgry: Gustaw i Wodnik Szuwarek
+7. Węgry: Gustaw i Pająk chwat
 8. Ameryka w Wieczorynce: Smerfy, Gumisie, Disney
 9. Europa Zachodnia i koprodukcje lat 90.
 
