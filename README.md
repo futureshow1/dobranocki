@@ -1,3 +1,5 @@
+**▶ Wersja live / Live site: https://futureshow.pl/dobranocki/**
+
 # LEGENDARNE DOBRANOCKI · 1980–2000
 
 Portal streamingowy legendarnych dobranocek — polskich i zagranicznych — z wieczornego pasma TV: **326 zweryfikowanych odcinków 53 seriali w 9 rozdziałach** — od Bolka i Lolka, Reksia i Misia Uszatka, przez Krecika, Rumcajsa i Wilka z Zającem, po Smerfy, Gumisie i Muminki.
