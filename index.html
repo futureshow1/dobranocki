@@ -751,7 +751,7 @@
     .nav-btn .cur { max-width: 120px; }
   }
 </style>
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="canonical" href="https://futureshow.pl/dobranocki/">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><link rel="canonical" href="https://futureshow.pl/dobranocki/"><link rel="alternate" hreflang="pl" href="https://futureshow.pl/dobranocki/"><link rel="alternate" hreflang="en" href="https://futureshow.pl/dobranocki/en/"><link rel="alternate" hreflang="x-default" href="https://futureshow.pl/dobranocki/">
 </head>
 <body>
 
@@ -1274,7 +1274,7 @@ document.getElementById('themeBtn').addEventListener('click', () => {
   applyTheme();
 });
 document.getElementById('langBtn').addEventListener('click', () => {
-  lang = lang === 'pl' ? 'en' : 'pl';
+  lang = lang === 'pl' ? 'en' : 'pl'; /*FS_EN_NAV*/ if(lang==='en'&&!/\/en\/?$/.test(location.pathname)){try{localStorage.setItem('db-lang','en')}catch(e){}location.href='en/'+location.hash;return;} if(lang==='pl'&&/\/en\/?$/.test(location.pathname)){try{localStorage.setItem('db-lang','pl')}catch(e){}location.href='../'+location.hash;return;}
   localStorage.setItem('db-lang', lang);
   applyI18n();
 });
