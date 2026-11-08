@@ -1,2 +1,6 @@
 curated.bak
 .DS_Store
+
+# Claude Code — ustawienia lokalne (mogą zawierać zatwierdzone polecenia z sekretami)
+.claude/settings.local.json
+.claude/*.local.json
